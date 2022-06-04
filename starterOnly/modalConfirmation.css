@@ -1,0 +1,32 @@
+.modalConfirmation {
+    margin: 5% auto;
+    width: 80vw;
+    animation-name: modalopen;
+    animation-duration: var(--modal-duration);
+    background: #232323;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    padding-top: 20vh;
+    text-align: center;
+    height: 55vh;
+    display: none;
+}
+
+.messageValidation {
+    align-items: center;
+}
+.btnConfirmation {
+    background: #fe142f;
+    display: block;
+    margin: 0 auto;
+    border-radius: 7px;
+    font-size: 1rem;
+    padding: 12px 82px;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+    margin-top: 15vh;
+}
+
