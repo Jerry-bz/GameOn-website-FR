@@ -7,11 +7,12 @@ function editNav() {
   }
 }
 
-// Accés aux éléments du DOM
+// Accés aux éléments du DOM à l'aide de variable
  const modalbg = document.querySelector(".bground");
  const modalBtn = document.querySelectorAll(".modal-btn");
  const formData = document.querySelectorAll(".formData");
  const close = document.querySelector(".close");
+ const close2 = document.querySelector(".close2");
  const form = document.getElementById("form");
  const modalConfirmation = document.querySelector(".modalConfirmation"); 
  const btnConfirmation = document.querySelector(".btnConfirmation"); 
@@ -43,11 +44,15 @@ modalbg.style.display = "block";
 // Fermeture la page d'inscription lors du clic sur la croix 
 close.addEventListener( "click", closeModal);
 
-// Fonction de fermeture 
+// Fonction de fermeture de la page d'inscription
 function closeModal() {
   modalbg.style.display = "none"; 
-  modalConfirmation.style.display = "none";
 }
+
+// Fonction de fermeture au clic sur la croix de la page de confirmation 
+close2.addEventListener("click", function(e) {
+  modalConfirmation.style.display = "none";
+});
 
 // Lorsqu'on apuuie sur le bouton fermer, la page qui confirme la participation disparaît
 btnConfirmation.addEventListener("click", function(e) {
