@@ -65,7 +65,6 @@ e.preventDefault();
 // Si elles sont valides, on affiche un message qui confirme la participation
   if (validForname(forms.forename) && validSurname(forms.surname) && validEmail(forms.email) && validBirthdate(forms.birthdate) && validQuantity(forms.quantity) && validCity(forms.city) && validConditions(forms.conditions)) {
   modalbg.style.display = "none";
-  document.querySelector(".hero-section").style.display = "none";
   modalConfirmation.style.display = "block"; 
   return true;
 }
@@ -73,8 +72,12 @@ e.preventDefault();
 
 // Variables qui contiennent les regex
 let nameRegex = /^[a-zA-ZÀ-Ÿà-ÿ]+([\s\'\.\-][a-zA-ZÀ-Ÿà-ÿ]+)?([\s\'\.\-][a-zA-ZÀ-Ÿà-ÿ]+)*$/
-let emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+let emailRegex = "^[A-Za-z0-9._-]+@[A-Za-z0-9._-]+\\.[a-z][a-z]+$"
 let birthdateRegex = /^\d{4}[\/\-](0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])$/;
+
+// Ajout des attributs pour la date de naissance
+forms.birthdate.setAttribute("required","");
+forms.birthdate.setAttribute("max","2004-12-31");
 
 // Fonction de validation pour le prénom
  function validForname() {
@@ -119,8 +122,6 @@ function validEmail() {
 // Fonction de validation pour la date de naissance
 
 function validBirthdate() {
-  forms.birthdate.setAttribute("required","");
-  forms.birthdate.setAttribute("max","2004-12-31");
   if (!forms.birthdate.value.match(birthdateRegex)) {
     formData[3].appendChild(p).innerHTML = "Veiller à indiquer votre date de naissance au format jj/mm/aaaa";
     return false;
@@ -187,7 +188,7 @@ forms.surname.addEventListener("change", validSurname);
 forms.email.addEventListener("change", validEmail);
 
 // On applique la fonction à l'événement
-forms.birthdate.addEventListener("change", validBirthdate);
+forms.birthdate.addEventListener("input", validBirthdate);
 
 // On applique la fonction à l'événement
 forms.quantity.addEventListener("change", validQuantity);

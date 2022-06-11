@@ -12,6 +12,9 @@
     text-align: center;
     height: 55vh;
     display: none;
+    transform: translate(2%,-165%);
+    box-shadow: black 1px 1px 1px 1px;
+    z-index: 2;
 }
 
 .messageValidation {
