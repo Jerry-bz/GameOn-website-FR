@@ -1,6 +1,6 @@
 .modalConfirmation {
     margin: 5% auto;
-    width: 80vw;
+    width: 55vw;
     animation-name: modalopen;
     animation-duration: var(--modal-duration);
     background: #232323;
@@ -12,7 +12,7 @@
     text-align: center;
     height: 55vh;
     display: none;
-    transform: translate(2%,-165%);
+    transform: translate(2%,-180%);
     box-shadow: black 1px 1px 1px 1px;
     z-index: 2;
 }
